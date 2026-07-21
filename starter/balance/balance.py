@@ -2,12 +2,15 @@
 
 from transaction.transaction_category import TransactionCategory
 from transaction.transaction import Transaction
+from balance.balance_observer import IBalanceObserver
 
 class Balance:
     """Singleton to track the balance."""
 
     _instance = None
     _balance = 0.0
+    # _balance_observer = IBalanceObserver
+    _balance_observer = []
 
     def __init__(self):
         """Initialize the balance. Prevent direct instantiation."""
@@ -19,6 +22,11 @@ class Balance:
         if cls._instance is None:
             cls._instance = cls.__new__(cls)
         return cls._instance
+
+    def register_observer(self, balance_observer):
+        # _balance_observer = balance_observer
+        self._balance_observer.append(balance_observer)
+        pass
 
     def reset(self):
         """Reset the net balance to zero."""
@@ -48,7 +56,8 @@ class Balance:
             self._balance = self._balance - transaction.amount
         else:
             raise ValueError("Do better")
-        # pass
+        self._balance_observer[0].update(self._balance, transaction)
+        # self._balance_observer.update(self._balance, transaction)
 
     def get_balance(self):
         """Get the current net balance."""
