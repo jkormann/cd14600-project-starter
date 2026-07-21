@@ -11,36 +11,28 @@ class IBalanceObserver(ABC):
 
     def __init__(self, threshold):
         super().__init__()
-        print (f"IBalaceObserver::ctr")
         self.threshold = threshold
 
     @abstractmethod
-    def update(self, balance, transaction) -> None:
-        print (f"IBalance::update")
-        # """Handle balance updates."""
-        # raise NotImplementedError("Subclasses must implement update method.")
+    def update(self, balanceValue, transaction) -> None:
+        """Handle balance updates."""
+        raise NotImplementedError("Subclasses must implement update method.")
 
 
 class PrintObserver(IBalanceObserver):
-    # def __init__(self, threshold):
-    #     super().__init__()
-
-    def update(self, balance, transaction) -> None:
+    def update(self, balanceValue, transaction) -> None:
         """Print balance update message."""
-        print (f"PrintObserver::update")
-        balance.get_balance()
+        print (f"Balance is ${balanceValue}")
 
 
 class LowBalanceAlertObserver(IBalanceObserver):
     def __init__(self, threshold):
         super().__init__(threshold)
-        print (f"LowBalance::ctr")
         self.threshold = threshold
 
-    def update(self, balance, transaction) -> None:
-        print (f"LowBalance::update")
+    def update(self, balanceValue, transaction) -> None:
         """Alert if balance drops below threshold."""
-        balance.apply_transaction(transaction)
-        if balance.get_balance <= self.threshold:
+        if balanceValue < self.threshold:
             self.alert_triggered = True
-        pass
+        else:
+            self.alert_triggered = False
