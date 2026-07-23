@@ -2,8 +2,8 @@
 
 from transaction.transaction_category import TransactionCategory
 from transaction.transaction import Transaction
-#from balance.balance_observer import IBalanceObserver
-from balance_observer import IBalanceObserver
+from balance.balance_observer import IBalanceObserver
+#from balance_observer import IBalanceObserver
 
 class Balance:
     """Singleton to track the balance."""

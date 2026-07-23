@@ -1,6 +1,6 @@
 import unittest
-# from balance.balance import Balance
-from balance import Balance
+from balance.balance import Balance
+#from balance import Balance
 from transaction.transaction import Transaction
 from transaction.transaction_category import TransactionCategory
 
