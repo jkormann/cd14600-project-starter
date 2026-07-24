@@ -12,4 +12,4 @@ class TransactionAdapter:
         # Transaction inputs: Amount, Category (Income / Expense)
         if ( self.external_transaction.typ == "income"):
             return Transaction(self.external_transaction.amount, TransactionCategory.INCOME)
-        # pass
+        

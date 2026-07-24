@@ -11,6 +11,7 @@ class Transaction:
     def __init__(self, amount, category: TransactionCategory):
         self.amount = amount
         self.category = category
+        print (f"Creating transaction ${category} for $ ${amount}")
 
     def __str__(self):
         return (f"Transaction(${self.amount}, category='{self.category}')")
