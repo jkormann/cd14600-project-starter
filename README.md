@@ -3,6 +3,11 @@
 This project is a hands-on exercise in applying Object-Oriented Design Patterns to build a simplified personal finance manager.
 You will implement and extend starter code to add functionality such as tracking transactions, adapting external data, observing balance changes, and ensuring proper architectural patterns.
 
+## Reflection
+Implementation completion was to get the unit tests, and the main to pass.
+
+The Decorator was used as the Fourth Pattern since it would make sense from a FinTech perspective to include the ability to use a Foreign Currency in the transaction.
+
 ## Getting Started
 
 ### Dependencies
