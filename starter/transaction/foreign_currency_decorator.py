@@ -5,21 +5,26 @@ from transaction.transaction import Transaction
 
 class IForeignCurrency (Transaction):
     _transaction = Transaction
-    _exchangeRate = 0.0
+    _exchangeRate = 100.0 # Start with 1:1 currency exchange
+
+    @property
+    def amount(self):
+        return self._transaction.amount * self._exchangeRate
+
+    @property
+    def category(self):
+        return self._transaction.category
 
 class ForeignCurrencyTransaction(IForeignCurrency):
-
     def __init__(self, localTransaction: Transaction, exchangeRate: float):
         self._transaction = localTransaction
-        # print (f"Creating Foreign Current transaction ${category} for $ ${amount}")
         self._exchangeRate = exchangeRate
-        self._transaction.amount = self._transaction.amount * exchangeRate
 
     def __str__(self):
-        return (f"Transaction(${self.amount}, category='{self.category}', exchange rate='{self._exchangeRate}')")
+        return (f"Transaction(${self.amount}, category='{self._transaction.category}', exchange rate='{self._exchangeRate}')")
 
     def __eq__(self, other):
-        if (self.amount == other.amount) and (self.category == other.category):
+        if (self.amount == other.amount) and (self._transaction.category == other.category):
             return True
         else:
             return False
