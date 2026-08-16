@@ -4,6 +4,9 @@ from transaction.transaction import Transaction
 
 
 class IForeignCurrency (Transaction):
+    """
+    Interface for Foreign Current Decorator
+    """
     _transaction = Transaction
     _exchangeRate = 100.0  # Start with 1:1 currency exchange
 
@@ -17,6 +20,9 @@ class IForeignCurrency (Transaction):
 
 
 class ForeignCurrencyTransaction(IForeignCurrency):
+    """
+    Decorator for Currency Transaction to allow a Foreign Currency value
+    """
     def __init__(self, localTransaction: Transaction, exchangeRate: float):
         self._transaction = localTransaction
         self._exchangeRate = exchangeRate

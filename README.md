@@ -6,7 +6,24 @@ You will implement and extend starter code to add functionality such as tracking
 ## Reflection
 Implementation completion was to get the unit tests, and the main to pass.
 
+The four patterns, Singleton, Adapter, Observer, and Decorator work together. 
+
+Challenge is Python is a horrible language.
+
+
+### Singleton
+Singleton to have one balance. Enhancement is to have one Account with one balance.
+
+### Adaptor
+The Adapter pattern to convert freelance-platform income into my transaction model and allow movement between types
+It keeps external data isolated; the trade-off is maintaining the field mapping.
+
+### Observer
+Observer to display alerts and messages. This frees the balance to send messages without changing its structure.
+
+### Decorator
 The Decorator was used as the Fourth Pattern since it would make sense from a FinTech perspective to include the ability to use a Foreign Currency in the transaction.
+
 
 ## Getting Started
 
