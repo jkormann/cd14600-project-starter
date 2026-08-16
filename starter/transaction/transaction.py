@@ -16,7 +16,7 @@ class Transaction:
         self.category = category
         self.description = description
         self.invoice_id = invoice_id
-        print (f"Creating transaction ${category} for $ ${amount} invoice ${invoice_id} desc ${description}")
+        print (f"Creating transaction {category} for $ {amount} invoice {invoice_id} desc {description}")
 
     def __str__(self):
         return (f"Transaction(${self.amount}, category='{self.category}')")
