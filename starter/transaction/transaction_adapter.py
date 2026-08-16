@@ -3,6 +3,7 @@
 from transaction.transaction import Transaction
 from transaction.transaction_category import TransactionCategory
 
+
 class TransactionAdapter:
     def __init__(self, external_transaction):
         self.external_transaction = external_transaction
@@ -10,10 +11,10 @@ class TransactionAdapter:
     def to_transaction(self):
         """Convert an external transaction to a standard Transaction."""
         # Transaction inputs: Amount, Category (Income / Expense)
-        if ( self.external_transaction.typ == "income"):
-            return Transaction(self.external_transaction.amount,
-                               TransactionCategory.INCOME,
-                               invoice_id=self.external_transaction.invoice_id,
-                                description=self.external_transaction.description
-                               )
-        
+        if (self.external_transaction.typ == "income"):
+            return Transaction(
+                self.external_transaction.amount,
+                TransactionCategory.INCOME,
+                invoice_id=self.external_transaction.invoice_id,
+                description=self.external_transaction.description
+                )

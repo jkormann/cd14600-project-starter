@@ -3,7 +3,7 @@
 from transaction.transaction_category import TransactionCategory
 from transaction.transaction import Transaction
 from balance.balance_observer import IBalanceObserver
-#from balance_observer import IBalanceObserver
+
 
 class Balance:
     """Singleton to track the balance."""
@@ -65,9 +65,6 @@ class Balance:
     def get_balance(self):
         """Get the current net balance."""
         return self._balance
-        #pass
 
     def summary(self):
         """Return a summary string of the net balance."""
-        #pass
-    

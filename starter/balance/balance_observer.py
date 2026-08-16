@@ -4,8 +4,8 @@ import balance
 import transaction
 from abc import ABC, abstractmethod
 
+
 class IBalanceObserver(ABC):
-# class IBalanceObserver():
     alert_triggered = False
     threshold = 0.0
 
@@ -23,8 +23,8 @@ class PrintBalanceObserver(IBalanceObserver):
     def update(self, balanceValue, transaction) -> None:
         """Print balance update message."""
         self.threshold = 0.0
-        self.alert_triggered = False #  Print only
-        print (f"Balance is ${balanceValue}")
+        self.alert_triggered = False  # Print only
+        print(f"Balance is ${balanceValue}")
 
 
 class LowBalanceAlertObserver(IBalanceObserver):

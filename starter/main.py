@@ -10,7 +10,7 @@ from transaction.external_income_transaction import ExternalFreelanceIncome
 
 def main():
     print("Adding transactions...")
-   
+
     # TODO: Create balance and add observers
     balance = Balance.get_instance()
     balance.reset()
@@ -26,7 +26,11 @@ def main():
     ]
 
     # Create an external income transaction (via Adapter pattern)
-    freelance_income = ExternalFreelanceIncome(1200, "INV-98765", "Mobile App Project")
+    freelance_income = ExternalFreelanceIncome(
+        1200,
+        "INV-98765",
+        "Mobile App Project"
+        )
     adapter = TransactionAdapter(freelance_income)
     adapted_transaction = adapter.to_transaction()
 
