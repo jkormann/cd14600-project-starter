@@ -29,7 +29,7 @@ class ForeignCurrencyTransaction(IForeignCurrency):
 
     def __str__(self):
         return (f"Transaction(${self.amount}, "
-                "category='{self._transaction.category}', "
+                "category='{self.category}', "
                 "exchange rate='{self._exchangeRate}')")
 
     def __eq__(self, other):

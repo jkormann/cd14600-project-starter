@@ -21,10 +21,10 @@ class TestForeignCurrency(unittest.TestCase):
 
         # Test by creating an account with a balance,
         # and applying the base transaction with a foreign transation
-        currBalance = Balance.get_instance()
-        currBalance.reset()
-        currBalance.apply_transaction(ft)
-        self.assertEqual(currBalance.get_balance(), 37.5)
+        curr_balance = Balance.get_instance()
+        curr_balance.reset()
+        curr_balance.apply_transaction(ft)
+        self.assertEqual(curr_balance.get_balance(), 37.5)
 
 
 if __name__ == "__main__":

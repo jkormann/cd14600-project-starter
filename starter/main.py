@@ -37,12 +37,11 @@ def main():
     all_transactions = transactions + [adapted_transaction]
 
     # TODO: Apply all transactions to balance
-    currBalance = Balance.get_instance()
-    # currBalance.reset()
-    for oneTransaction in all_transactions:
-        print(currBalance.get_balance())
-        currBalance.apply_transaction(oneTransaction)
-        print(f"    ${currBalance.get_balance()}")
+    curr_balance = Balance.get_instance()
+    for one_transaction in all_transactions:
+        print(curr_balance.get_balance())
+        curr_balance.apply_transaction(one_transaction)
+        print(f"    ${curr_balance.get_balance()}")
 
 
 if __name__ == "__main__":

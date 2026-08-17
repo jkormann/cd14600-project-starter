@@ -1,7 +1,7 @@
 # balance_observer.py
 
-import balance
-import transaction
+# import balance
+# import transaction
 from abc import ABC, abstractmethod
 
 
@@ -14,23 +14,23 @@ class IBalanceObserver(ABC):
         self.threshold = threshold
 
     @abstractmethod
-    def update(self, balanceValue, transaction) -> None:
+    def update(self, balance_value, transaction) -> None:
         """Handle balance updates."""
         raise NotImplementedError("Subclasses must implement update method.")
 
 
 class PrintBalanceObserver(IBalanceObserver):
-    def update(self, balanceValue, transaction) -> None:
+    def update(self, balance_value, transaction) -> None:
         """Print balance update message."""
         self.threshold = 0.0
         self.alert_triggered = False  # Print only
-        print(f"Balance is ${balanceValue}")
+        print(f"Balance is ${balance_value}")
 
 
 class LowBalanceAlertObserver(IBalanceObserver):
-    def update(self, balanceValue, transaction) -> None:
+    def update(self, balance_value, transaction) -> None:
         """Alert if balance drops below threshold."""
-        if balanceValue < self.threshold:
+        if balance_value < self.threshold:
             print("Triggered")
             self.alert_triggered = True
         else:
