@@ -1,8 +1,6 @@
 # balance.py
 
 from transaction.transaction_category import TransactionCategory
-from transaction.transaction import Transaction
-from balance.balance_observer import IBalanceObserver
 
 
 class Balance:
