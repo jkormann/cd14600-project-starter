@@ -11,10 +11,10 @@ class TransactionAdapter:
     def to_transaction(self):
         """Convert an external transaction to a standard Transaction."""
         # Transaction inputs: Amount, Category (Income / Expense)
-        if (self.external_transaction.typ == "income"):
+        if self.external_transaction.typ == "income":
             return Transaction(
                 self.external_transaction.amount,
                 TransactionCategory.INCOME,
                 invoice_id=self.external_transaction.invoice_id,
-                description=self.external_transaction.description
-                )
+                description=self.external_transaction.description,
+            )
