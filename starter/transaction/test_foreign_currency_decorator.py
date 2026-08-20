@@ -5,15 +5,17 @@ from transaction.transaction_category import TransactionCategory
 from balance.balance import Balance
 
 
-class TestForeignCurrency(unittest.TestCase):
+class TestForeignCurrencyTransaction(unittest.TestCase):
 
     def test_transaction(self):
         t = Transaction(50, TransactionCategory.INCOME)
+        print (f"{str(t)}")
         self.assertEqual(
             str(t), "Transaction($50, " "category='TransactionCategory.INCOME')"
         )
 
         ft = ForeignCurrencyTransaction(t, 0.75)
+        print (f"{str(ft)}")
         self.assertEqual(
             str(ft),
             "Transaction($37.5, "

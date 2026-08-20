@@ -18,7 +18,7 @@ class Transaction:
         self.invoice_id = invoice_id
         print(
             f"Creating transaction {category} for $ {amount} "
-            "invoice {invoice_id} desc {description}"
+            f"invoice {invoice_id} desc {description}"
         )
 
     def __str__(self):
