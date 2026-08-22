@@ -13,7 +13,7 @@ class TestTransaction(unittest.TestCase):
     def test_transaction_str(self):
         t = Transaction(50, TransactionCategory.INCOME)
         self.assertEqual(
-            str(t), "Transaction($50, " "category='TransactionCategory.INCOME')"
+            str(t), "Transaction($50, category='TransactionCategory.INCOME')"
         )
 
     def test_transaction_equality(self):

@@ -9,9 +9,10 @@ class Transaction:
     amount = 0.0
     category = TransactionCategory.EXPENSE
 
-    def __init__(
-        self, amount, category: TransactionCategory, invoice_id="", description=""
-    ):
+    def __init__(self, amount,
+                 category: TransactionCategory,
+                 invoice_id="",
+                 description=""):
         self.amount = amount
         self.category = category
         self.description = description
