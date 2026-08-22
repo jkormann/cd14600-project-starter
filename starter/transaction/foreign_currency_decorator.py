@@ -25,15 +25,15 @@ class ForeignCurrencyTransaction(IForeignCurrency):
     Decorator for Currency Transaction to allow a Foreign Currency value
     """
 
-    def __init__(self, localTransaction: Transaction, exchangeRate: float):
-        self._transaction = localTransaction
-        self._exchangeRate = exchangeRate
+    def __init__(self, local_transaction: Transaction, exchange_rate: float):
+        self._transaction = local_transaction
+        self._exchange_rate = exchange_rate
 
     def __str__(self):
         return (
             f"Transaction(${self.amount}, "
             f"category='{self.category}', "
-            f"exchange rate='{self._exchangeRate}')"
+            f"exchange rate='{self._exchange_rate}')"
         )
 
     def __eq__(self, other):
